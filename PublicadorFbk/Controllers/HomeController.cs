@@ -9,7 +9,7 @@ namespace PublicadorFbk.Controllers
 {
     public class HomeController : Controller
     {
-        private string user_token ="CAAI0f3PIDeEBABvSCzueKbeia6gCzylAk1QZAqLK0kaOx4hTzJG1tfvZBmZA5EHvCh7xs5JMJNNdVIzcemXZAftZChmAZBC2y7Eo7eBAGP5jKbRfrcXMPGrYM0Ky2NjiZAR8NKeXcVTZBZBjAKMh3OWgb8u5UBOzaV5iZB9fcRrkCIZCNLJbE25lE1pu3oKX9bhWM6miUZA4qZBl2WwaZAmkaxvGjflPNLQhZChaCoZD";
+        private string user_token = "CAACEdEose0cBAGUZCpNRXv7b03uVsc6pbqKTbHgUEVm90Bd3nreTW4KM7w467FQe7i5rdd1JnvPZBvbmMk3P8DpjmaBlKrXwPvvC4DQV3nlQzyDkb1aIp6LjQBnRmqXXWDXMws2Rkmgwo1sfHPeu6cINVvih245ZBt9H5seKTIm1WJkpZBnJ2RmipuAr7YH5CCZCdQLOf8f79ZBlDV3W28MjVZAKuBcGjwZD";
 
        
         
@@ -22,18 +22,18 @@ namespace PublicadorFbk.Controllers
 
         public ActionResult Ler()
         {
+            var cliente = new FacebookClient(user_token);
+            dynamic me = cliente.Get("me/groups");
+            ViewBag.Me = me;
+
+
+            //string teste = "183306468352624";
+
+
+            ////var cliente = new FacebookClient(user_token);
+
             //var cliente = new FacebookClient();
-            //dynamic me = cliente.Get("fernandopientka");
-            //ViewBag.Me = me;
-
-
-            string teste = "183306468352624";
-
-
-            //var cliente = new FacebookClient(user_token);
-
-            var cliente = new FacebookClient();
-            dynamic me = cliente.Get(teste);
+            //dynamic me = cliente.Get(teste);
 
 
            // cliente.Post("/me/feed", new {message="Testando Publicador FBK com C#."});

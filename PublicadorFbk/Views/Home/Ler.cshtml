@@ -3,9 +3,24 @@
     ViewBag.Title = "Ler";
 }
 
-<h2>@ViewBag.Me.about</h2>
+<div class="col-md-12">
+    <div class="container">
+        <h2>@ViewBag.Me.about</h2>
 
-<a href="@ViewBag.Me.link">@ViewBag.Me.name</a>
+      
+            @foreach (var x in ViewBag.Me.data)
+            {
+               
+                    <span class="col-md-6">@x.name</span>
+                    <span class="col-md-6">@x.id</span>
+               
+            }
+
+
+      
+    </div>
+</div>
+@*<a href="@ViewBag.Me.link">@ViewBag.Me.name</a>*@
 
 
 
